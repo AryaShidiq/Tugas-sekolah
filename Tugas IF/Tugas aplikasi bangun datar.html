@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penghitung luas bangun datar</title>
+</head>
+<body>
+    
+
+
+    <script>
+        var ask = alert("mau hitung luas apa?")
+    var pilih = prompt("persegi, jajar genjang, belah ketupat, segitiga")
+    if(pilih =="persegi"){
+        sisi = prompt("masukkan besar sisi")
+        luas = (sisi*sisi)
+       alert("luasnya adalah : " + luas)
+    }else if(pilih == "jajar genjang"){
+        alas = prompt("masukkan besar alas")
+        alas = parseInt("jajar genjang") 
+        tinggi = prompt("masukkan besar tinggi")
+        tinggi = parseInt("jajar genjang") 
+        luasjg = (alas*tinggi)
+        alert("luasnya adalah : " + luasjg)
+    }else if(pilih == "belah ketupat"){
+        d1 = prompt("masukkan besar diagonal 1")
+        d1 = parseInt("belah ketupat") 
+        d2 = prompt("masukkan diagonal 2")
+        d2 = parseInt("belah ketupat") 
+        luasbk = (d1*d2/2)
+        alert("luasnya adalah : " + luasbk)
+    }else if(pilih == "segitiga"){
+        alas = prompt("masukkan besar alas")
+        alas = parseInt("segitiga") 
+        tinggi = prompt("masukan besar tinggi")
+        tinggi = parseInt("segitiga")
+        luasst = (0.5*alas*tinggi)
+        alert("luasnya adalah : " + luasst)
+    }else{
+        alert("anda tidak memilih atau anda salah ketik...")
+    }
+    </script>
+</body>
+</html>
