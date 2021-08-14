@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program pengiriman barang</title>
+</head>
+<body>
+   <script>
+     var sender = prompt("masukkan nama pengirim")
+     var receive = prompt("masukkan nama penerima")
+     var jarak = prompt("masukkan jarak pengiriman (satuan km)")
+     var alamat = prompt("masukkan alamat penerima")
+     var jenis = prompt("masukkan jenis barang")
+     var berat = prompt("masukkan berat barang yang dikirim (satuan kg)")
+     var hargaJarak = jarak * 10000;
+     var diskonJarak = "";
+     if (hargaJarak > 50000){
+         diskonJarak = hargaJarak * 0.10 
+     }else {
+         hargaJarak = 0
+     ;}
+
+     var hargaBerat = berat * 5000
+     var diskonBerat = "";
+     if(hargaBerat > 100000){
+         diskonBerat = hargaBerat * 0.05
+     }else {
+         diskonBerat = 0
+     }
+     var diskonTotal = diskonJarak + diskonBerat;
+     var totalBiaya = (hargaJarak+hargaBerat) - diskonTotal
+
+     document.write("Nama pengirim :"  + sender) 
+     document.write("<br>")
+     document.write("Nama penerima :" + receive)
+     document.write("<br>")
+     document.write("Jarak pengiriman " + jarak +"km")
+     document.write("<br>")
+     document.write("Alamat penerima :" + alamat)
+     document.write("<br>")
+     document.write("Jenis barang yang dikirim :" + jenis)
+     document.write("<br>")
+     document.write("Berat barang yang dikirim :" + berat +"kg")
+     document.write("<br>")
+     document.write("Total keseluruhan biaya :"  + totalBiaya)
+     document.write("<br>")
+     document.write("Diskon jarak :"  + diskonJarak)
+     document.write("<br>")
+     document.write("Diskon berat :" + diskonBerat )
+
+
+
+   </script>
+
+
+   </table>
+</body>
+</html>
