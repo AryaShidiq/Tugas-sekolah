@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreach,nested</title>
+</head>
+<body>
+    <script>
+         // for nested digunakan untuk melaukan perulangan didalam perulangan
+         // jadi data dibawah akan diulangi 5*5 kali... yang berarti total pengulangan adalah 25
+         for(i = 1; i<=5; i++){
+            for(k = 1; k<=5; k++){
+                document.writeln('hallo')
+            }
+            document.write("<br>")
+        }
+       // for each digunakan untuk mengeluarkan semua data didalam array
+       var angka = [1,2,3,4,5,6];
+       angka.forEach(item => {
+           document.write(item);
+       });
+    </script>
+</body>
+</html>
