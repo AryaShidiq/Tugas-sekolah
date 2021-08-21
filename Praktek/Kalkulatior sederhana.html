@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(133, 190, 192);">
+    <h2 style="text-align: center;">Kalkulator Sederhana</h2>
+    <table border="1" style="background-color: white;">
+        <tr>
+            <td>
+                <p>Perkalian</p>
+            </td>
+            <td>
+    <input type="text" placeholder="masukkan angka pertama" id="angka1">X
+    <input type="text" placeholder="masukkan angka kedua" id="angka2">
+    </td>
+     <td>
+    <button onclick="hitungKali()" >Hitung</button>
+    <input type="text" placeholder="hasil" id ="hasilKali">
+     </td>
+    </tr>
+    <tr>
+        <td>
+        <p>Pengurangan</p>
+        </td>
+        <td>
+            <input type="text" placeholder="masukkan angka1" id="angka1KR">  -
+            <input type="text" placeholder="masukkan angka2" id="angka2KR">
+        </td>
+        <td>
+            <button onclick="hitungKR()">Hitung</button>
+            <input type="text" placeholder="hasil" id="hasilKR">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Pembagian</p>
+        </td>
+        <td>
+            <input type="text" placeholder="masukkan angka pertama" id="angka1BG"> :
+            <input type="text" placeholder="masukkan angka kedua" id="angka2BG">
+        </td>
+        <td>
+            <button onclick="hitungBG()">hitung</button>
+            <input type="text" placeholder="hasil" id="hasilBG">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Penjumlahan</p>
+        </td>
+        <td>
+            <input type="text" placeholder="masukkan angka pertama" id="angka1JM"> +
+            <input type="text" placeholder="masukkan angka kedua" id="angka2JM">
+        </td>
+        <td>
+            <button onclick="hitungJM()">hitung</button>
+            <input type="text" placeholder="hasil" id="hasilJM">
+        </td>
+    </tr>
+    </table>
+
+    <script>
+        function hitungKali() {
+            var angka1 = document.getElementById('angka1').value
+            var angka2 = document.getElementById('angka2').value
+
+            var angkaHitung1 = document.getElementById('angka1').value
+            var angkaHitung2 = document.getElementById('angka2').value
+
+            var hasilKali = angka1 * angka2
+
+            document.getElementById('hasilKali').value = hasilKali
+        }
+        function hitungKR() {
+            var angka1KR = document.getElementById('angka1KR').value
+            var angka2KR = document.getElementById('angka2KR').value
+
+            var angkaHitung1KR = document.getElementById('angka1KR').value
+            var angkaHitung2KR = document.getElementById('angka2KR').value
+
+            var hasilKR = angka1KR - angka2KR
+            document.getElementById('hasilKR').value = hasilKR
+        }
+        function hitungBG() {
+         var angka1BG = document.getElementById('angka1BG').value
+         var angka2BG = document.getElementById('angka2BG').value
+         
+         var x = Number(angka1BG)
+         var y = Number(angka2BG)
+
+         var hasilBG = x / y
+         document.getElementById('hasilBG').value = hasilBG
+        }
+        function hitungJM() {
+            var angka1JM = document.getElementById('angka1JM').value
+            var angka2JM = document.getElementById('angka2JM').value
+
+            var angkaHitungJM1 = Number(angka1JM)
+            var angkaHitungJM2 = Number(angka2JM)
+            var hasilJM = angkaHitungJM1 + angkaHitungJM2
+            document.getElementById('hasilJM').value = hasilJM
+        }
+    </script>
+</body>
+</html>
