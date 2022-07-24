@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>MiChan Shop</title>
+    <style>
+        .jumbotron{
+            height: 450px;
+            background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/55b210103840807.5f56b9ba5f0a3.jpg);
+            background-size: cover;
+            background-position-y: -200px;
+        }
+
+        .judullist{
+            height: 50px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar center navbar-expand-lg navbar-light bg-dark">
+      <a class="navbar-brand text-white" href="file:///C:/Users/champ/OneDrive/Documents/TUGAS/Tugas-sekolah/praktek/Tugas%20harian/Aplikasi%20penjualan.html#">MiChanSHop</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="file:///C:/Users/champ/OneDrive/Documents/TUGAS/Pembayaran.html">Pembayaran<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4 text-center text-white">MiChan SHop</h1>
+          <p class="lead text-left text-blue">Life isn't perfect, but your outfit can be.</p>
+        </div>
+      </div>
+
+    <div class="container">
+       <div class="row">
+        <div class="col-4">
+            <div class="judullist bg-dark rounded text-center text-white pt-2">List Items</div>
+
+
+            
+
+
+            <div class="listkeranjang" id="listkeranjang">
+               
+            </div>
+               <table width="100%">
+                   <tbody>
+                       <tr>
+                           <td>Discount (5%)</td>
+                           <td>Rp. <span id=discount></span></td>
+                       </tr>
+                       <tr>
+                           <td>PPn (10%)</td>
+                           <td>Rp. <span id=pajak></span></td>
+                       </tr>
+                       <tr class="bg-dark text-white">
+                           <td>Total bayar</td>
+                           <td>Rp. <span id=totalbayar></span></td>
+                       </tr>
+                   </tbody>
+               </table>
+
+        <button type="button" class="btn btn-primary mt-3 btn-block" onclick="window.location.href='file://C:/Users/champ/OneDrive/Documents/TUGAS/Pembayaran.html'">Bayar</button>
+
+        </div>
+ 
+        <div class="col-8" id="listproduk">
+            
+        </div>
+       </div>
+
+       
+    </div>
+    
+
+    
+       
+
+    <script>
+        var namabarang = ['Jumper team liquid 2020', 'Jersey team liquid 2020 (blue)','Gaming chair secret lab',]
+        var hargabarang = [350000,275000,5000000,]
+        var gambarbarang = [
+            "https://www.apparelgaming.com/image/cache/data/JUMPER/Capture2aeadad22%20(1)-400x400.png",
+            "https://ae01.alicdn.com/kf/H88c59d5aeed148d7be9a8433d139faa1P.jpg",
+            "https://resources.esportsinsider.com/esportsinsider/2020/04/Team-Liquid-Secretlab-Partnership.jpg",
+            
+        
+
+        ]
+
+        var listproduk = document.getElementById('listproduk')
+        var listkeranjang = document.getElementById('listkeranjang')
+       
+
+        var namabarang_keranjang = []
+        var hargabarang_keranjang = []
+        
+
+        function showlistproduk() {
+            listproduk.innerHTML = ''
+           
+            for (let i = 0; i < namabarang.length; i++) {
+                listproduk.innerHTML +=
+                  '<div class="card float-left mr-3 mb-3" style="width: 12rem;">'+
+                '<img class="card-img-top" src='+gambarbarang[i]+'>'+
+                '<div class="card-body">'+
+                  '<h5 class="card-title">'+namabarang[i]+'</h5>'+
+                  '<p class="card-text">Rp '+hargabarang[i]+'</p>'+
+                  '<a href="#" class="btn btn-primary" onclick="addlistitem('+i+')">Beli</a>'+
+                '</div>'+
+                '</div>'
+             
+                
+            }
+        }
+        function addlistitem(id) {
+        namabarang_keranjang.push(namabarang[id])
+        hargabarang_keranjang.push(hargabarang[id])
+
+       
+
+        showlistkeranjang()
+        }
+        var tampilandiscount = document.getElementById('discount')
+        var tampilanpajak = document.getElementById('pajak')
+        var tampilantotalbayar = document.getElementById('totalbayar')
+
+
+        function showlistkeranjang() {
+            listkeranjang.innerHTML = ''
+            var discount = 0 
+            var pajak = 0
+            var totalbayar = 0
+
+            for (let i = 0; i < namabarang_keranjang.length; i++) {
+               listkeranjang.innerHTML += '<div class="card mt-3 mb-3" style="width: 22rem;">'+
+                '<div class="card-body">'+
+                  '<h5 class="card-title">'+namabarang_keranjang[i]+'</h5>'+
+                  '<p class="card-text">'+hargabarang_keranjang[i]+'</p>'+
+                  '<p>Qty ; 1</p>'+
+                  '<a href="#" class="btn btn-danger float-right" onclick ="deleteitem('+i+')">Hapus</a>'+
+                '</div>'+
+              '</div>'
+              
+            hargatotal = hargabarang_keranjang[i]+totalbayar
+
+            
+         
+            
+            totalbayar = hargatotal
+            tampilantotalbayar.innerHTML = totalbayar
+            if(totalbayar>600000){
+            discount = totalbayar*0.05 
+
+            }else{
+            discount = 0
+            } 
+            totalbayar = hargatotal-discount
+
+            pajak = totalbayar*0.1
+
+            var totalbelanja = totalbayar
+            tampilanpajak.innerHTML = pajak
+            tampilandiscount.innerHTML = discount
+            tampilantotalbayar.innerHTML = totalbayar
+            }
+        }
+
+        showlistproduk()
+
+        function deleteitem(id) {
+          namabarang_keranjang.splice(id,1)
+          hargabarang_keranjang.splice(id,1)
+          showlistkeranjang()
+       
+        }
+        
+
+        function bayar(id) {
+          var bayar = document.getElementById('listproduk')
+          // bayar.innerHTML +=
+          // '<form>'+
+          // '<div class="form-group">'+
+          
+          //  '<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama">'+
+          // '<small id="emailHelp" class="form-text text-muted">Well never share your email with anyone else.</small>'+
+          // '</div>'+
+          //   '<div class="form-group">'+
+          //   '<label for="exampleInputPassword1">Password</label>'+
+          //   '<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">'+
+          //    '</div>'+
+          //    '<div class="form-check">'+
+          //     '<input type="checkbox" class="form-check-input" id="exampleCheck1">'+
+          //     '<label class="form-check-label" for="exampleCheck1">Check me out</label>'+
+          //      '</div>'+
+          //       '<button type="submit" class="btn btn-primary">Submit</button>'+
+          //        '</form>'
+          
+          
+
+
+          // '<div class="modal" tabindex="-1" role="dialog">'+
+          // '<div class="modal-dialog" role="document">'+
+          //  '<div class="modal-content">'+
+          //    '<div class="modal-header">'+
+          //      '<h5 class="modal-title">Modal title</h5>'+
+          //      '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+          //      '<span aria-hidden="true">&times;</span>'+
+          //      '</button>'+
+          //      '</div>'+
+          //      '<div class="modal-body">'+
+          //      '<p>Modal body text goes here.</p>'+
+          //      '</div>'+
+          //      '<div class="modal-footer">'+
+          //        '<button type="button" class="btn btn-primary">Save changes</button>'+
+          //        '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'+
+          //      '</div>' 
+          //    '</div>'
+          //  '</div>'
+          // '</div>'
+         
+        }
+
+        
+
+        
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

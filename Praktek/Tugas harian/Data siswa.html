@@ -42,7 +42,7 @@
                 <th scope="col">Alamat</th>
                 <th scope="col">Action</th>
               </tr>
-            </thead>
+            </thead>  
             <tbody id="tampildata">
               
             </tbody>
@@ -53,9 +53,9 @@
 
 
         <script>
-            var namasiswa = ['Bagus']
-            var kelas = ['X']
-            var alamat = ['Depok']
+            var namasiswa = ['Bagus','Badang']
+            var kelas = ['X','XI']
+            var alamat = ['Depok','Malang']
 
             var tampil = document.getElementById('tampildata')
 
@@ -73,7 +73,7 @@
                           "<td id='row_alamat'>"+alamat[i]+"</td>"+
                          "<td>"+
                             "<button class='btn btn-warning' onclick='edit("+i+")'>Edit</button>"+
-                            "<button class='btn btn-danger'onclick='hapus("+i+")'>Hapus</button>"+
+                            "<button class='btn btn-danger'onclick='hapus ("+i+")'>Hapus</button>"+
                        "</tr>"
                 }
 
